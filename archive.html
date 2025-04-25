@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Archive — Alex Quirino</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="#" id="secret-link" class="logo">Alex Quirino</a>
+      <nav>
+        <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        <!-- then the rest of your links -->
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="archive.html" class="nav-link">Archive</a>
+        <button id="login-btn" class="nav-button">Login</button>
+        <button id="logout-btn" class="nav-button" style="display:none">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="archive posts" id="archived-posts">
+      <h1>Pinned Posts</h1>
+      <!-- JS will now inject <article class="post"> blocks here -->
+    </section>    
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Alex Quirino. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

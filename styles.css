@@ -1,0 +1,309 @@
+:root {
+  --bg: #fff;
+  --text: #1d1d1f;
+  --accent: #007aff;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Dark mode */
+.dark {
+  --bg: #1c1c1e;
+  --text: #f2f2f7;
+}
+
+/* Layout */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header & Nav */
+.site-header {
+  border-bottom: 1px solid #e5e5e5;
+}
+.dark .site-header {
+  border-color: #2c2c2e;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+.logo {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+nav {
+  display: flex;
+  align-items: center;
+}
+.nav-link, .nav-button {
+  margin-left: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.nav-link:hover, .nav-button:hover {
+  color: var(--accent);
+}
+
+/* Posts */
+.posts .post {
+  position: relative;
+  margin-bottom: 60px;
+}
+.post-title {
+  margin: 0;
+  font-size: 1.75rem;
+}
+.post-title a {
+  color: inherit;
+  text-decoration: none;
+}
+.post-title a:hover {
+  color: var(--accent);
+}
+/* excerpt always visible */
+.post-excerpt {
+  margin-top: 0.5em;
+}
+/* hidden full content */
+.post-full {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.post-full.expanded {
+  max-height: 400px; /* adjust as needed */
+  margin-top: 1em;
+}
+/* pill-style read-more button */
+button.read-more {
+  display: inline-block;
+  padding: 0.5em 1.25em;
+  margin-top: 0.5em;
+  background: var(--accent);
+  color: var(--bg);
+  border-radius: 999px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background .2s, color .2s, border-color .2s;
+}
+button.read-more:hover {
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* hidden-by-default password form */
+.pw-form {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  margin-top: 0; /* no gap until expanded */
+}
+/* when expanded, give it room */
+.pw-form.expanded {
+  max-height: 500px; /* enough to show the entire form */
+  margin-top: 1em;
+}
+/* reuse your read-more bubble style for the submit button */
+#password-form .read-more {
+  margin-top: 1em;
+}
+
+/* Video embed */
+.post-video {
+  margin: 1.5em 0;
+}
+.post-video video {
+  width: 100%;
+  max-height: 480px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Archive pinned styling from your ZIP */
+.pinned-posts .pinned-entry {
+  display: flex;
+  flex-direction: column;
+}
+.pinned-posts .pinned-entry .post-title {
+  margin-bottom: 0.5em;
+}
+.pinned-posts .pinned-entry button.read-more {
+  align-self: flex-start;
+  margin-top: 0;
+}
+
+/* Modal (add-post) */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.4);
+  display:flex; align-items:center; justify-content:center;
+}
+.modal-content {
+  background: var(--bg);
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%; max-width: 500px;
+}
+.modal-content label {
+  display:block; margin:10px 0; font-weight:500;
+}
+.modal-content input,
+.modal-content textarea {
+  width:100%; padding:8px; margin-top:4px;
+  border:1px solid #ccc; border-radius:4px;
+  background:transparent;
+  color: inherit;
+}
+.modal-actions {
+  display:flex; justify-content:flex-end; gap:10px; margin-top:15px;
+}
+.modal-actions button {
+  padding:8px 16px; border:none; border-radius:4px;
+  cursor:pointer; font-weight:500;
+}
+.modal-actions button:hover { opacity:0.9; }
+
+/* Context Menu */
+.context-menu {
+  position: absolute;
+  background: var(--bg);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  border-radius: 6px;
+  z-index:1000;
+}
+.context-menu ul {
+  list-style:none; margin:0; padding:8px 0;
+}
+.context-menu li {
+  padding:8px 16px; cursor:pointer; white-space:nowrap;
+}
+.context-menu li:hover {
+  background: #f0f0f5;
+}
+
+/* Profile page */
+.profile label {
+  display:block; margin:10px 0; font-weight:500;
+}
+.profile input {
+  width:100%; padding:8px; margin-top:4px;
+  border:1px solid #ccc; border-radius:4px;
+}
+.password-message {
+  margin-top:10px; font-style:italic;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid #e5e5e5;
+  text-align: center;
+  padding: 40px 0;
+  margin-top: 80px;
+  font-size: 0.9rem;
+}
+.dark .site-footer {
+  border-color: #2c2c2e;
+}
+/* ————— Delete‐button styling ————— */
+button.delete-post {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: var(--text);
+  margin-left: 0.5em;
+}
+button.delete-post:hover {
+  color: #e00;
+}
+
+/* ————— Theme‐toggle SVG sizing ————— */
+#theme-toggle svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  stroke: var(--text);
+}
+#theme-toggle:hover svg {
+  stroke: var(--accent);
+}
+
+/* give a little space between toggle and Home link */
+#theme-toggle {
+  margin-right: 12px;
+  font-size: 1.2rem;
+}
+
+/* Theme toggle as inline emoji only */
+#theme-toggle {
+  background-color: transparent;    /* no gray box */
+  border: none;                     /* no border */
+  padding: 0;                       /* no padding around emoji */
+  margin-right: 12px;               /* keep your spacing */
+  font-size: 1.2rem;                /* controls emoji size */
+  line-height: 1;                   /* align with text baseline */
+  cursor: pointer;                  /* still clickable */
+  appearance: none;                 /* remove OS-specific styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+#theme-toggle:focus {
+  outline: none;                    /* optional: remove focus ring */
+}
+
+/* password form collapse */
+.pw-form {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  margin-top: 0;
+}
+.pw-form.expanded {
+  max-height: 500px;
+  margin-top: 1em;
+}
+
+/* reuse your read-more bubble for Confirm button */
+button.read-more {
+  padding: 0.5em 1.25em;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--bg);
+  border: 1px solid transparent;
+}
+button.read-more:hover {
+  background: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* images inserted under video */
+.post-image {
+  margin: 1.5em 0;
+}
+.post-image img {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}

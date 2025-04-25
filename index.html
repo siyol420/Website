@@ -1,0 +1,78 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Alex Quirino — Blog</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="#" id="secret-link" class="logo">Alex Quirino</a>
+      <nav>
+        <!-- Dark-mode emoji toggle -->
+        <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="archive.html" class="nav-link">Archive</a>
+
+        <!-- Single "+" to the right of Archive -->
+        <button id="add-post-btn" class="nav-button">＋</button>
+
+        <button id="login-btn"  class="nav-button">Login</button>
+        <button id="logout-btn" class="nav-button" style="display:none">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="posts" class="posts">
+      <!-- Posts injected here -->
+    </section>
+  </main>
+
+  <!-- Add-Post Modal -->
+  <div id="post-modal" class="modal" style="display:none">
+    <form id="post-form" class="modal-content">
+      <h2>New Post</h2>
+      <label>Title<br>
+        <input type="text" name="title" required>
+      </label>
+      <label>Date<br>
+        <input type="date" name="date" required>
+      </label>
+      <label>Video URL<br>
+        <input type="url" name="video" placeholder="optional">
+      </label>
+      <label>Excerpt<br>
+        <textarea name="excerpt" rows="3" required></textarea>
+      </label>
+      <label>Full Content<br>
+        <textarea name="content" rows="5" required></textarea>
+      </label>
+      <div class="modal-actions">
+        <button type="submit">Add Post</button>
+        <button type="button" id="cancel-post">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Context-menu for Pin/Unpin -->
+  <div id="context-menu" class="context-menu" style="display:none">
+    <ul>
+      <li id="pin-post">Pin to Archive</li>
+      <li id="unpin-post">Unpin from Archive</li>
+    </ul>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Alex Quirino. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
