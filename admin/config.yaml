@@ -1,0 +1,7 @@
+tunnel: <your-tunnel-id>
+credentials-file: /path/to/your/credentials.json
+
+ingress:
+  - hostname: https://website.alexquirino.info/
+    service: 10.69.1.100:446  # or your actual local server port
+  - service: http_status:404
